@@ -57,9 +57,9 @@ def main(
         The seed, by default 2. if -1, use random seed.
     """
 
-    video_info = read_video(input)
+    video_info = read_video(input, pts_unit="sec")
     video = video_info[0] / 255
-    fps = video_info[2]["video_fps"]
+    fps = int(video_info[2]["video_fps"])
     height = int(video.shape[1] * scale)
     width = int(video.shape[2] * scale)
 
